@@ -12,6 +12,7 @@ body {
 	top: 0px;
 	background-color: #6600ff;
 	overflow: hidden;
+	z-index: 1;
 }
 .title-bar a {
 	float: left;
@@ -30,9 +31,9 @@ body {
 	color: white;
 }
 .main-page {
-	padding-left: 16px;
-	padding-right: 16px;
-	padding-bottom: 26px;
+	text-align: center;
+	padding-bottom: 45px;
+	width: 100%;
 }
 .text-content {
 	padding-left: 16px;
@@ -50,6 +51,50 @@ body {
 	font-size: 12px;
 	border-top: 2px solid black;
 }
+.heading-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+#title-image {
+	z-index: 0;
+	filter: brightness(50%);
+	width: 99vw;
+	height: auto;
+}
+.heading-text {
+  	color: white;
+	position: absolute;
+	top: 50%;
+ 	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+.purple-button {
+  border: none;
+  background-color: #6600ff;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  color: white;
+}
+ .column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.impact-statement {
+	background-color: #deb602;
+	color: white;
+	width: auto;
+	padding: 14px 16px;
+}	
 
 @media screen and (max-width: 500px) {
 	.titlebar a {
