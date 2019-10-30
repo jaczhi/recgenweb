@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset = "utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="styles/styles.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script async src="./javascript/index.js"></script>
+		<script async src="./javascript/generator.js"></script>
 		<title>Recommendation Generator</title>
 	</head>
 	<body>
@@ -12,7 +14,14 @@
 			<a href="#howto">How-To</a>
 			<a href="privacy.html">Privacy</a>
 		</div>
-		<h1 class="text-content">Work in progress. Please be patient</h1>
+		<div class="generator-box"><div id="generator-content"><div id="javascript-generator">
+				<h3>Welcome! I'll be asking you a few quick questions.</h3>
+				<p>You will receive your letter immediately after.</p>
+				<p>Make sure you have read the privacy policy and license first.</p>
+				</div>
+				<div class="nav-buttons"><button class="purple-button" onclick="prevPage()">Back</button><a id="pagecount"> 0 of 5000 </a> 
+					<button class="purple-button" onclick="nextPage()">Next</button></div>
+			</div></div>
 		<div class="footer">
 			Copyright © 2019 • 
 			<a href="license.html">License</a> • 

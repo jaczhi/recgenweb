@@ -40,6 +40,32 @@ body {
 	padding-right: 16px;
 	padding-bottom: 26px;
 }
+.generator-box {
+	width:800px;
+ 	height: 600px;
+ 	margin:0 auto;
+ 	background:#e8eef3;
+ 	position:absolute;
+ 	left:50%;
+ 	top:50%;
+ 	margin-left:-400px;
+ 	margin-top:-300px;
+	border: 2px solid purple;
+}
+#generator-content {
+	margin-left: 16px;
+	margin-right: 16px;
+	margin-top: 24px;
+	text-align: center;
+}
+.nav-buttons {
+  	position: absolute;
+  	bottom: 10px;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+}
 .footer {
 	position: absolute;
 	bottom: 0;
@@ -82,8 +108,6 @@ body {
   float: left;
   width: 50%;
 }
-
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
@@ -100,5 +124,15 @@ body {
 	.titlebar a {
 		float: none;
 		display: block;
+	}
+	.hide-mobile {
+		visibility: hidden;
+		font-size: 0;
+	}
+	.generator-box {
+		width: 90vw;
+		margin-left: -46vw;
+		height: 80vh;
+		margin-top: -40vh;
 	}
 }
