@@ -197,7 +197,6 @@ function switchPage(page) {
 		document.getElementById("javascript-generator").innerHTML = "<h3>Let's get to know you:</h3>" + 
 		"<p>In what class did you work with " + studentName + "?" + 
 		"<input type=\"text\" name=\"inputbox\"  placeholder=\"eg. Algebra II\" id=\"className\">";
-	}
 	} if(page==11) {
 		keepGoing = true;
                 try {className = document.getElementById("className").value;} catch(e_var_0) {}
@@ -237,7 +236,7 @@ function switchPage(page) {
 		} else if (programType==4) {
 			result += " a position at " + programName + ". ";
 		}
-		result += 
+		result += "WARNING: DO NOT USE. THIS PROGRAM IS NOT YET FINISHED";
 		result += "</div>";
 		document.getElementById("generator-content").innerHTML = result;
 	}
