@@ -58,6 +58,23 @@ body {
 	margin-top: 24px;
 	text-align: center;
 }
+#generator-result {
+	width: 700px;
+	height: 520px;
+	margin:0 auto;
+	background: #ffffff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	border: 3px solid black;
+	font-family: Times;
+	margin-left: -365px;
+	margin-top: -270px;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+}
 .nav-buttons {
   	position: absolute;
   	bottom: 10px;
@@ -135,4 +152,9 @@ body {
 		height: 80vh;
 		margin-top: -40vh;
 	}
+	#generator-result {
+		width: 80vw;
+		margin-left: -43vw;
+		height: 75vh;
+		margin-top: -38vh;
 }

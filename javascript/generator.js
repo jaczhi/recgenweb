@@ -1,7 +1,7 @@
 console.log("Sneaky one, aren't ya?");
 var keepGoing = true;
 var pageNum = 0;
-var totalPages = 5000;
+var totalPages = 11;
 function nextPage() {
 	pageNum = pageNum + 1;
 	switchPage(pageNum);
@@ -36,6 +36,11 @@ var traitEmph = [-1, -1, -1, -1, -1, -1, -1];
 var teacherName = "";
 var title = 0;
 var titleArr = ["", "Dr. ", "Mr. ", "Mrs. ", "Ms."];
+
+var className = ""
+
+var writer=-1;
+
 function switchPage(page) {
 	if(page==0) {
 		document.getElementById("javascript-generator").innerHTML = "" + 
@@ -189,11 +194,53 @@ function switchPage(page) {
 			"</select>";
 		}
 	} if(page==10) {
-		document.getElementById("javascript-generator").innerHTML = "<h3>Customization</h3>" + 
-		"<p>Please choose your writer</p>" + 
-		"<p>Please be patient. Work in progress</p>"
+		document.getElementById("javascript-generator").innerHTML = "<h3>Let's get to know you:</h3>" + 
+		"<p>In what class did you work with " + studentName + "?" + 
+		"<input type=\"text\" name=\"inputbox\"  placeholder=\"eg. Algebra II\" id=\"className\">";
 	}
-
+	} if(page==11) {
+		keepGoing = true;
+                try {className = document.getElementById("className").value;} catch(e_var_0) {}
+                 console.log("class: " + className);
+		 if(className === "") {
+                         prevPage();
+                         console.log("Executed prevpage: no valid name");
+                         keepGoing = false;
+		}
+		if(keepGoing){
+		document.getElementById("javascript-generator").innerHTML = "<h3>Customization</h3>" + 
+		"<p>Please choose your writing style</p>" + 
+		"<input type=\"radio\" name=\"writer\" onclick=\"page10write(0)\">Long, sophisticated, and relatively formal<br>" + 
+		"<br><input type=\"radio\" name=\"writer\" onclick=\"page10write(1)\">Friendly, formal, and easy-to-read<br>";}
+	} if(page==12) {
+		keepGoing = true;
+		if(writer==-1) {
+			prevPage();
+			console.log("Executed prevpage - no writer selected");
+			keepGoing=false;
+		}
+		else {
+			document.getElementById("javascript-generator").innerHTML = "<h3>Congratulations!</h3>" + 
+			"<p>You have completed all questions. </p>" +
+			"<p>Please click next to receive and share your letter of recommendation.</p>";
+		}
+	} if(page==13) {
+		var result = "<div id=\"generator-result\">";
+		result += "To whom it may concern, <br>";
+		result += "It's my absolute pleasure to recommend " + studentName + " for ";
+		if(programType==0) {
+			result += programName + ". ";
+		} else if (programType==1) {
+			result += "admission to the program at " + programName + " University. ";
+		} else if (programType==2) {
+			result += "the " + programName + " summer program. ";
+		} else if (programType==4) {
+			result += " a position at " + programName + ". ";
+		}
+		result += 
+		result += "</div>";
+		document.getElementById("generator-content").innerHTML = result;
+	}
 }
 var page2noRan = true;
 function page2no(){
@@ -231,4 +278,7 @@ function page6traits(x) {
  	title = x;
 	console.log(x + ": " + titleArr[x]);
  }
- 	
+function page10write(x) {
+	writer=x;
+	console.log("writer: " + writer);
+}
